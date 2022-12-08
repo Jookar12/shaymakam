@@ -3,15 +3,15 @@ from Config import Config
 from telethon import events, Button
 
 PM_START_TEXT = """
-ʜᴇʏᴀ! {}
+بەخێربێت! {}
 ➖➖➖➖➖➖➖➖➖➖➖➖➖➖
-✘ **ɪ'ᴍ ᴀ ꜱɪᴍᴘʟᴇ ᴛᴇʟᴇɢʀᴀᴍ ᴍᴜꜱɪᴄ ᴀɴᴅ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ**.
-‣ **ɪ ᴄᴀɴ ᴘʟᴀʏ ꜱᴏɴɢꜱ ɪɴ ʏᴏᴜʀ ᴠᴏɪᴄᴇ**.
-‣ **ɪ ʜᴀᴠᴇ ᴀʟᴍᴏꜱᴛ ᴀʟʟ ꜰᴇᴀᴛᴜʀᴇꜱ ᴡʜɪᴄʜ ɴᴇᴇᴅꜱ ᴀ ᴍᴜꜱɪᴄ ʙᴏᴛ**
-‣ **ᴛʜɪꜱ ʙᴏᴛ ʙᴀꜱᴇᴅ ᴏɴ ᴛᴇʟᴇᴛʜᴏɴ. ꜱᴏ ɪᴛ'ꜱ ᴘʀᴏᴠɪᴅᴇ ᴍᴏʀᴇ ꜱᴛᴀʙɪʟɪᴛʏ ꜰʀᴏᴍ ᴏᴛʜᴇʀ ʙᴏᴛꜱ**!
-‣ **ɪ ᴄᴀɴ ᴅᴏ ᴏᴛʜᴇʀ ᴛʜɪɴɢꜱ ʟɪᴋᴇ ᴘɪɴꜱ ᴇᴛᴄꜱ**.
+✘ **من مۆسیقایەکی سادەی تەلگرام و بۆتێکی بەڕێوەبردنم**.
+‣ **دەتوانم بە دەنگی تۆ گۆرانی بژەنم**.
+‣ ** من نزیکەی هەموو تایبەتمەندیەکانم هەیە کە پێویستی بە بۆتێکی مۆسیقا هەیە ئەم بۆتەیە لەسەر بنەمای تەلەفۆنە**
+‣ **کەواتە جێگیری زیاتر دابین دەکات لە ڕووەکەکانی تر**!
+‣ **من دەتوانم شتی تر بکەم وەک پین و هتد**.
 ➖➖➖➖➖➖➖➖➖➖➖➖➖➖
-✘ **ᴄʟɪᴄᴋ ᴏɴ ʜᴇʟᴘ ʙᴜᴛᴛᴏɴ 🔘 ꜰᴏʀ ᴍᴏʀᴇ ɪɴꜰᴏʀᴍᴀᴛɪᴏɴ ℹ️**.
+✘ **کرتە بکە لەسەر یارمەتی بۆتۆن 🔘 بۆ زانیاریi️ زیاتر**.
 """
 
 @Zaid.on(events.NewMessage(pattern="^[?!/]start$"))
@@ -23,10 +23,10 @@ async def start(event):
              Config.START_IMG,
              caption=PM_START_TEXT.format(event.sender.first_name), 
              buttons=[
-        [Button.url("➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ᴄʜᴀᴛ", f"https://t.me/{BOT_USERNAME}?startgroup=true")],
-        [Button.url("👨‍💻 ꜱᴏᴜʀᴄᴇ ᴄᴏᴅᴇ", "https://github.com/ITZ-ZAID/Telethon-Music")],
-        [Button.url("🗣️ ꜱᴜᴘᴘᴏʀᴛ", f"https://t.me/{Config.SUPPORT}"), Button.url("📣 ᴜᴘᴅᴀᴛᴇꜱ", f"https://t.me/{Config.CHANNEL}")],
-        [Button.inline("ʜᴇʟᴘ ᴀɴᴅ ᴄᴏᴍᴍᴀɴᴅꜱ", data="help")]])
+        [Button.url("➕ زیادی گرووپەکەتم بکە", f"https://t.me/{BOT_USERNAME}?startgroup=true")],
+        [Button.url("👨‍💻 دەسکاری مەکە", "https://github.com/ITZ-ZAID/Telethon-Music")],
+        [Button.url("🗣️ گرووپەکەم", f"https://t.me/{Config.SUPPORT}"), Button.url("📣 چەناڵەکەم", f"https://t.me/{Config.CHANNEL}")],
+        [Button.inline("داوای یارمەتی کردن", data="help")]])
        return
 
     if event.is_group:
@@ -41,8 +41,8 @@ async def _(event):
         return
     if event.is_private:
        await event.edit(PM_START_TEXT.format(event.sender.first_name), buttons=[
-        [Button.url("➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ᴄʜᴀᴛ", f"https://t.me/{BOT_USERNAME}?startgroup=true")],
-        [Button.url("👨‍💻 ꜱᴏᴜʀᴄᴇ ᴄᴏᴅᴇ", "https://github.com/ITZ-ZAID/Telethon-Music")],
-        [Button.url("🗣️ ꜱᴜᴘᴘᴏʀᴛ", f"https://t.me/{Config.SUPPORT}"), Button.url("📣 ᴜᴘᴅᴀᴛᴇꜱ", f"https://t.me/{Config.CHANNEL}")],
-        [Button.inline("ʜᴇʟᴘ ᴀɴᴅ ᴄᴏᴍᴍᴀɴᴅꜱ", data="help")]])
+        [Button.url("➕ زیادی گرووپەکەتم بکە", f"https://t.me/{BOT_USERNAME}?startgroup=true")],
+        [Button.url("👨‍💻 دەسکاری مەکە", "https://github.com/ITZ-ZAID/Telethon-Music")],
+        [Button.url("🗣️ گرووپەکەم", f"https://t.me/{Config.SUPPORT}"), Button.url("📣 چەناڵەکەم", f"https://t.me/{Config.CHANNEL}")],
+        [Button.inline("داوای یارمەتی کردن", data="help")]])
        return
