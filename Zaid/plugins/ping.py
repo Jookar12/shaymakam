@@ -29,12 +29,12 @@ async def _human_time_duration(seconds):
     return ', '.join(parts)
 
 
-@Zaid.on(events.NewMessage(pattern="^/ping"))
+@Zaid.on(events.NewMessage(pattern="^/Owner"))
 async def _(event):
    start = time()
    current_time = datetime.utcnow()
    delta_ping = time() - start
    uptime_sec = (current_time - START_TIME).total_seconds()
    uptime = await _human_time_duration(int(uptime_sec))
-   UMM = [[Button.url("⚜ Cԋαɳɳҽʅ ⚜", "https://t.me/TheUpdatesChannel")]]
+   UMM = [[Button.url("⚜ سەرۆک", "https://t.me/N4MO_1A")]]
    await event.reply(f"╰☞ 𝗣𝗢𝗡𝗚™╮\n☞ {delta_ping * 1000:.3f}\n☞ {uptime}", buttons=UMM)
